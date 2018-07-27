@@ -28,7 +28,7 @@ class Solution(object):
         j = 1
         d = {}
         d[s[i]] = i
-        while i < len(s) and j < len(s):
+        while j < len(s):
             if s[j] in d and d[s[j]] >= i:
                 max_len = max(max_len, j - i)
                 i = d[s[j]] + 1

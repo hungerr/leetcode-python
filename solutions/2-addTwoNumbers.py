@@ -41,18 +41,16 @@ class Solution(object):
             node1 = node1.next
             node2 = node2.next
             node3 = node3.next
-        if node1:
-            while node1:
-                mod, val = divmod(node1.val + mod, 10)
-                node3.next = ListNode(val)
-                node1 = node1.next
-                node3 = node3.next
-        else:
-            while node2:
-                mod, val = divmod(node2.val + mod, 10)
-                node3.next = ListNode(val)
-                node2 = node2.next
-                node3 = node3.next
+        while node1:
+            mod, val = divmod(node1.val + mod, 10)
+            node3.next = ListNode(val)
+            node1 = node1.next
+            node3 = node3.next
+        while node2:
+            mod, val = divmod(node2.val + mod, 10)
+            node3.next = ListNode(val)
+            node2 = node2.next
+            node3 = node3.next
         if mod:
             node3.next = ListNode(mod)
         return l3
